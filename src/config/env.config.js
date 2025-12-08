@@ -1,13 +1,16 @@
-import * as env from "env-var";
-import "./dotenv";
+import env from "env-var";
+import "./dotenv.js";
 
 const config = {
   server: {
     port: env.get("SERVER_PORT").default(8080).asPortNumber(),
   },
   mongo: {
-    url: env.get("MONGO_URL").default("mongodb://localhost:27017/").asUrlString()
-  }
+    url: env
+      .get("MONGO_URL")
+      .default("mongodb://localhost:27017/")
+      .asUrlString(),
+  },
 };
 
 export default config;
