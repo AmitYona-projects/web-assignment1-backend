@@ -1,4 +1,4 @@
-import PostModel from "../models/post.js";
+import PostModel from "../models/postModel.js";
 
 class PostController {
   constructor() {
