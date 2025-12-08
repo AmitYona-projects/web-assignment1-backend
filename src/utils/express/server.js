@@ -1,7 +1,7 @@
 import express from "express";
-import config from "../../config/env.config";
-import { initMongo } from "../mongo";
-import appRouter from "./router";
+import config from "../../config/env.config.js";
+import { initMongo } from "../mongo.js";
+import appRouter from "./router.js";
 
 const initServer = async () => {
   try {
