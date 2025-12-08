@@ -1,5 +1,5 @@
 import config from "./config/env.config";
-import initServer from "./server"
+import initServer from "./utils/express/server"
 
 const main = async () => {
     const app = await initServer();

@@ -1,6 +1,7 @@
 import express from "express";
-import config from "./config/env.config";
-import { initMongo } from "./utils/mongo";
+import config from "../../config/env.config";
+import { initMongo } from "../mongo";
+import appRouter from "./router";
 
 const initServer = async () => {
   try {
@@ -11,6 +12,7 @@ const initServer = async () => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
 
+    app.use(appRouter);
 
     return app;
   } catch (error) {
