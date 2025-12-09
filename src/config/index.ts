@@ -8,6 +8,7 @@ const config = {
   mongo: {
     url: env.get('MONGO_URL').default('mongodb://localhost:27017/').asUrlString(),
     postsCollectionName: env.get('POSTS_COLLECTION_NAME').default('posts').required().asString(),
+    commentsCollectionName: env.get('COMMENTS_COLLECTION_NAME').default('comments').required().asString(),
   },
 };
 
