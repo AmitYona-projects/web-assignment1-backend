@@ -24,6 +24,12 @@ export class ServiceError extends Error {
   }
 }
 
+export class DocumentNotFoundError extends ServiceError {
+    constructor(id: string) {
+        super(404, `No Document found with id ${id}`);
+    }
+}
+
 export class ServerError extends Error {
   constructor(
     public code: number,
