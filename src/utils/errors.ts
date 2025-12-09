@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { StatusCodes } from "http-status-codes";
+
 export class BaseError extends Error {
   constructor(message: string) {
     super(message);
@@ -26,7 +28,7 @@ export class ServiceError extends Error {
 
 export class DocumentNotFoundError extends ServiceError {
     constructor(id: string) {
-        super(404, `No Document found with id ${id}`);
+        super(StatusCodes.NOT_FOUND, `No Document found with id ${id}`);
     }
 }
 

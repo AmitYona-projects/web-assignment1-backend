@@ -9,7 +9,7 @@ const postRouter = Router();
 
 postRouter.get("/", wrapController(PostController.getAllPosts));
 postRouter.get("/:id", ValidateRequest(getPostByIdSchema), wrapController(PostController.getPostById));
-postRouter.get("/sender", ValidateRequest(getPostsBySenderIdSchema), wrapController(PostController.getPostBySenderId));
+postRouter.get("/sender", ValidateRequest(getPostsBySenderIdSchema), wrapController(PostController.getPostsBySenderId));
 postRouter.post("/", ValidateRequest(createPostSchema), wrapController(PostController.createPost));
 postRouter.put("/:id", ValidateRequest(updatePostSchema), wrapController(PostController.updatePost));
 postRouter.delete("/:id", ValidateRequest(deletePostByIdSchema), wrapController(PostController.deletePostById));

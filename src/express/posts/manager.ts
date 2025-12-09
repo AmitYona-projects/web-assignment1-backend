@@ -11,7 +11,7 @@ export class PostManager {
         return PostModel.findById(id).orFail(new DocumentNotFoundError(id)).lean().exec();
     };
 
-    static getPostBySenderId = async (senderId: string): Promise<IMongoPost[]> => {
+    static getPostsBySenderId = async (senderId: string): Promise<IMongoPost[]> => {
         return PostModel.find({ senderId: senderId }).orFail(new DocumentNotFoundError(senderId)).lean().exec();
     };
 

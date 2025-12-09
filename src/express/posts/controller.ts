@@ -10,8 +10,8 @@ export class PostController {
         res.json(await PostManager.getPostById(req.params.id));
     };
 
-    static getPostBySenderId = async (req: Request, res: Response) => {
-        res.json(await PostManager.getPostBySenderId(req.query?.senderId as string));
+    static getPostsBySenderId = async (req: Request, res: Response) => {
+        res.json(await PostManager.getPostsBySenderId(req.query?.senderId as string));
     };
 
     static createPost = async (req: Request, res: Response) => {
