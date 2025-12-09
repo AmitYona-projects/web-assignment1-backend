@@ -15,14 +15,7 @@ const defaultValidationOptions: Joi.ValidationOptions = {
 };
 
 const normalizeRequest = (req: any, value: any) => {
-  req.originalBody = req.body;
-  req.body = value.body;
-
-  req.originalQuery = req.query;
-  req.query = value.query;
-
-  req.originalParams = req.params;
-  req.params = value.params;
+  req.validated = value;
 };
 
 const ValidateRequest = (
@@ -30,10 +23,17 @@ const ValidateRequest = (
   options: Joi.ValidationOptions = defaultValidationOptions
 ) => {
   const validator = async (req: Request) => {
-    const { error, value } = schema.unknown().validate(req, options);
+    const validationTarget = {
+      body: req.body,
+      query: req.query,
+      params: req.params,
+    };
+    const { error, value } = schema.validate(validationTarget, options);
+
     if (error) {
       throw error;
     }
+    
     if (options.convert) {
       normalizeRequest(req, value);
     }

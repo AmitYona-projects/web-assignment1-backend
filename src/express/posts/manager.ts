@@ -23,8 +23,10 @@ export class PostManager {
         return PostModel.findByIdAndUpdate(id, update, { new: true }).orFail(new DocumentNotFoundError(id)).lean().exec();
     };
 
-    static deletePostById = async (id: string): Promise<IMongoPost> => {
-        return PostModel.findByIdAndUpdate(id).orFail(new DocumentNotFoundError(id)).lean().exec();
+    static deletePostById = async (id: string): Promise<string> => {
+        await PostModel.findByIdAndDelete(id).orFail(new DocumentNotFoundError(id)).lean().exec();
+
+        return `Post ${id} deleted succesfully`;
     };
 
 }

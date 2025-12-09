@@ -15,7 +15,7 @@ export const getPostsBySenderIdSchema = emptyRequestSchema.keys({
 
 export const createPostSchema = emptyRequestSchema.keys({
     body: {
-        sender: MongoIdSchema.required(),
+        senderId: MongoIdSchema.required(),
         title: Joi.string().required(),
         description: Joi.string().required()
     }
@@ -23,7 +23,7 @@ export const createPostSchema = emptyRequestSchema.keys({
 
 export const updatePostSchema = emptyRequestSchema.keys({
     body: {
-        sender: MongoIdSchema.optional(),
+        senderId: MongoIdSchema.optional(),
         title: Joi.string().optional(),
         description: Joi.string().optional()
     },

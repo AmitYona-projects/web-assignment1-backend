@@ -1,9 +1,8 @@
 import express from "express";
+import postsRouter from "./posts/router";
 
 const appRouter = express.Router();
 
-appRouter.get("/", (req, res) => {
-  res.send("Hello World");
-});
+appRouter.use("/posts", postsRouter);
 
 export default appRouter;
