@@ -1,5 +1,3 @@
-console.log("Hello World");
-
 import mongoose from "mongoose";
 import config from "./config/index";
 import { Server } from "./express/server";
