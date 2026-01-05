@@ -1,0 +1,36 @@
+{
+  "name": "web-assignment1-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node  ./dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon ./src/index.ts",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.1",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "dotenv": "^17.2.3",
+    "env-var": "^7.5.0",
+    "express": "^5.2.1",
+    "express-winston": "^4.2.0",
+    "helmet": "^8.1.0",
+    "http-status-codes": "^2.3.0",
+    "joi": "^18.0.2",
+    "mongoose": "^9.0.1",
+    "winston": "^3.19.0"
+  }
+}
